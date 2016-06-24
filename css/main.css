@@ -1,0 +1,211 @@
+
+@font-face { font-family: Digital; src: url('../fonts/ds_digital/DS-DIGI.TTF'); }
+
+
+body {
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/nbadraft-background.jpg');
+  background-size: cover;
+  background-repeat: repeat-n;
+}
+
+header {
+  margin: 0 auto;
+}
+
+#left_header {
+  color: white;
+  text-align: left;
+  font-size: 1.3em;
+  float: left;
+  width: 20%;
+  margin: 0 auto;
+}
+
+#top_score {
+  padding: 1em 0 0 3em;
+}
+
+#current_score {
+  padding: 1em 0 0 3em;
+}
+
+#headline {
+  color: white;
+  text-align: center;
+  font-size: 5em;
+  float: left;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#right_header {
+  color: white;
+  text-align: right;
+  font-size: 1.3em;
+  float: left;
+  width: 20%;
+  margin: 0 auto;
+}
+
+#new_game {
+  padding: 1em 0 0 3em;
+}
+
+
+#shot_clock {
+  background-color: black;
+  font-size: 1.3em;
+  text-align: center;
+  position: relative;
+  margin: 1em auto;
+  width: 65%;
+}
+
+#shot_clock_header {
+  border: 1px white solid;
+}
+
+
+#shot_clock_countdown {
+  color: red;
+  font-family: Digital;
+  font-size: 2.5em;
+  padding-top: 0.1em;
+  border: 1px white solid;
+}
+
+
+section {
+  color: white;
+  position: relative;
+  top: 10em; 
+  width: 80%;
+  margin: 0 auto;
+/*  border: 1px white solid;*/
+}
+
+.hero {
+  color: white;
+  width: 80%;
+  margin: 0 auto;
+/*  border: 1px white solid;*/
+}
+
+.question-box {
+  width: 80%;
+  margin: 2em auto;
+/*  border: 1px white solid;*/
+}
+
+.question-tracker {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+  font-size: 3em;
+  text-align: center;
+  vertical-align: top;
+  width: 60%;
+  margin: 0 auto;
+/*  border: 1px white solid;*/
+}
+
+
+.question {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+  font-size: 1.2em;
+  position: relative;
+  margin: 1em;
+/*  border: 1px yellow solid;*/
+  padding: 1em;
+}
+
+.answer-box {
+  width: 80%;
+  margin: 0 auto;
+/*  border: 1px white solid;*/
+}
+
+
+.answer {
+  background-color: white;
+  color: black;
+  display: inline-block;
+  width: 40%;
+  margin: 1em;
+  padding: 0.5em;
+  border: 1px black solid;
+}
+
+.shadow {
+  -moz-box-shadow:    1px 1px 3px 4px #454443;
+  -webkit-box-shadow: 1px 1px 3px 4px #454443;
+  box-shadow:         1px 1px 3px 4px #454443;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+http://aishek.github.io/jquery-animateNumber/
+
+<p id="revese-countdown">10</p>
+
+$('#revese-countdown')
+  .prop('number', 10)
+  .animateNumber(
+    {
+      number: 0,
+      numberStep: function(now, tween) {
+        var target = $(tween.elem),
+            rounded_now = Math.round(now);
+
+        target.text(now === tween.end ? 'Launch!' : rounded_now);
+      }
+    },
+    10000,
+    'linear'
+  );
+*/
+
+
+
+
+
+
+
+
+
+
+
