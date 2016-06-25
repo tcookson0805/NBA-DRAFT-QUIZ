@@ -10,6 +10,7 @@ body {
 
 header {
   margin: 0 auto;
+  overflow: auto;
 }
 
 #left_header {
@@ -19,6 +20,10 @@ header {
   float: left;
   width: 20%;
   margin: 0 auto;
+}
+
+#new_game {
+  cursor: pointer;
 }
 
 #top_score {
@@ -78,17 +83,18 @@ header {
 section {
   color: white;
   position: relative;
-  top: 10em; 
   width: 80%;
   margin: 0 auto;
 /*  border: 1px white solid;*/
 }
 
 .hero {
+/*  position: absolute;*/
   color: white;
   width: 80%;
   margin: 0 auto;
-/*  border: 1px white solid;*/
+  left: 0;
+  right: 0;
 }
 
 .question-box {
@@ -97,6 +103,7 @@ section {
 /*  border: 1px white solid;*/
 }
 
+
 .question-tracker {
   background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
   font-size: 3em;
@@ -104,13 +111,26 @@ section {
   vertical-align: top;
   width: 60%;
   margin: 0 auto;
-/*  border: 1px white solid;*/
+  padding: 0.5em;
+
 }
 
+.start {
+  cursor: pointer;
+  margin: 1em;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.question-tracker-text {
+  display: none;
+
+}
 
 .question {
   background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
   font-size: 1.2em;
+  text-align: center;
   position: relative;
   margin: 1em;
 /*  border: 1px yellow solid;*/
@@ -120,7 +140,7 @@ section {
 .answer-box {
   width: 80%;
   margin: 0 auto;
-/*  border: 1px white solid;*/
+  display: none;
 }
 
 
@@ -134,13 +154,25 @@ section {
   border: 1px black solid;
 }
 
+.highlight {
+  background-color: yellow;
+}
+
 .shadow {
   -moz-box-shadow:    1px 1px 3px 4px #454443;
   -webkit-box-shadow: 1px 1px 3px 4px #454443;
   box-shadow:         1px 1px 3px 4px #454443;
 }
 
-
+.submit {
+  background-color: black;
+  text-align: center;
+  font-size: 1.5em;
+  border: 1px white solid;
+  margin: 1em auto;
+  width: 20%;
+  display: none;
+}
 
 
 
