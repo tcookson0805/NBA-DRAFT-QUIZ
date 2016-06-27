@@ -146,6 +146,7 @@ section {
 
 .answer {
   background-color: white;
+  cursor: pointer;
   color: black;
   display: inline-block;
   width: 40%;
