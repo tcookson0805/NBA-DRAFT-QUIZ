@@ -243,6 +243,7 @@ $(document).ready(function(){
     
     clearInterval(timer);      
     questionNumber = 0;
+    currentScore = 0;
     resetQuestions();
     console.log(questions)
     console.log(questionNumber)
