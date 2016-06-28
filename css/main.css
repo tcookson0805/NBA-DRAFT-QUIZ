@@ -122,10 +122,19 @@ section {
   margin: 0 auto;
 }
 
+.game-over {
+  margin: 1em;
+  width: 60%;
+  margin: 0 auto;
+  display: none;
+}
+
 .question-tracker-text {
   display: none;
 
 }
+
+
 
 .question {
   background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
@@ -133,8 +142,27 @@ section {
   text-align: center;
   position: relative;
   margin: 1em;
-/*  border: 1px yellow solid;*/
   padding: 1em;
+  display: none;
+}
+
+.instructions {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+  font-size: 1.2em;
+  text-align: center;
+  position: relative;
+  margin: 1em;
+  padding: 1em;
+}
+
+.end-game {
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) );
+  font-size: 1.2em;
+  text-align: center;
+  position: relative;
+  margin: 1em;
+  padding: 1em;
+  display: none;
 }
 
 .answer-box {
