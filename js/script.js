@@ -24,22 +24,43 @@ $(document).ready(function(){
   var questionsUsed = [];
   var currentQuestion = {};
   var correctAnswer = ''
-  var count = 9
+  var count = 24;
+  var questionNumber = 0;
   var timer;
+  var stop = false;
+  
+  var topScore = 0;
+  var currentScore = 0;
+
+
 
   var countdown = function(){
-    $('#shot_clock_countdown').text(count)
     if(count > 0){
       count--
+      $('#shot_clock_countdown').text(count)
     }
   }
 
   var triggerCountDown = function(){
-    $('#shot_clock_countdown').text(10);
+    $('#shot_clock_countdown').text(24);
     clearInterval(timer);
-    timer = setInterval(countdown, 1000);
+    console.log(questions.length)
+    if(!stop){
+      if(questions.length > 0){
+        timer = setInterval(countdown, 1000);
+      }else{
+        timer = setInterval(countdown, 1000);
+        stop = true;
+      }
+    }else{
+      clearInterval(timer);
+    }
   }
   
+  var resetCountDown = function(){
+    clearInterval(timer);
+    count = 24;
+  }
   
   var randomNumber = function(x){
     var result = Math.floor(Math.random() * x.length)
@@ -54,6 +75,8 @@ $(document).ready(function(){
       var used = list.splice(number, 1);
       questionsUsed.push(used);
     }
+    questionNumber++
+    $('.question-number').text(questionNumber)
   }
 
   
@@ -68,23 +91,37 @@ $(document).ready(function(){
     };
   }
   
-  var checkAnswer = function(answer){
-      if(answer === correctAnswer){
-        console.log('correct')
+  var checkAnswer = function(answer, correct){
+      if(answer === correct){
+        currentScore = currentScore + count;
+        $('.current-score-number').text(currentScore)
+        if(currentScore > topScore){
+          topScore = currentScore
+          $('.top-score-number').text(topScore);
+        }
       }else{
         console.log('incorrect')
       }
   }
 
   var resetQuestions = function(){
+    stop = false;
     for(var i = 0; i < questionsUsed.length; i++){
       questions.push(questionsUsed[i]);
     }
   }
   
-  // var checkAnswer = function(answer){
-  //   if(answer.text)
-  // }
+  var checkEndGame = function(){
+    if(!questions.length){
+      resetCountDown();
+    }
+  }
+  
+
+
+  $('.top-score-number').text(topScore);
+  $('.current-score-number').text(currentScore)
+  $('.total-questions').text(questions.length)
 
   $('body').on('click', '.start', function(){
     
@@ -96,14 +133,20 @@ $(document).ready(function(){
       $(this).addClass('highlight');
       $(this).siblings().removeClass('highlight')
     });
-    
+
+    triggerCountDown();    
     getQuestion(questions);
     getAnswer(currentQuestion);
-    triggerCountDown();
+
+    
+    console.log(currentQuestion)
     
     $('body').on('click', '.submit', function(){
       var answer = $('.highlight').text()
       
+      
+      checkEndGame();
+      checkAnswer(answer, correctAnswer);      
       resetCountDown();
       getQuestion(questions);
       getAnswer(currentQuestion);
@@ -117,9 +160,15 @@ $(document).ready(function(){
 
 
     $('body').on('click', '#new_game', function(){
+      clearInterval(timer);
+      $('#shot_clock_countdown').text(24)
       resetQuestions();
       $('.current-score-number').text('');
-      
+      $('.start').show();
+      $('.question-tracker-text').hide();
+      $('.answer-box').hide();
+      $('.submit').hide();
+      $('.question').text('Welcome to the NBA Draft Quiz. To begin, simply click the Start button above.')
     })
 
 
