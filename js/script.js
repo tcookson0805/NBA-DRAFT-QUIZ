@@ -97,9 +97,10 @@ $(document).ready(function(){
         $('.question').hide();
         $('.question-tracker-text').hide();
       }else{
-        resetCountDown()
-        triggerCountDown();
-        getQuestion(questions);  
+        // resetCountDown()
+        // triggerCountDown();
+        // getQuestion(questions);
+        $('.submit').trigger('click');
       } 
     }
   }
@@ -167,7 +168,7 @@ $(document).ready(function(){
           $('.top-score-number').text(topScore);
         }
       }else{
-        console.log('incorrect')
+        setTimeout(console.log('incorrect'), 5000);
       }
   }
 
